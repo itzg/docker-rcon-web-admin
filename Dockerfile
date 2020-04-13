@@ -1,16 +1,12 @@
 FROM node:10
 
-RUN apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y zip && \
-    apt-get clean
+ARG RCON_WEB_ADMIN_VERSION=0.14
 
-ARG RCON_WEB_ADMIN_VERSION=0.13.3
+ADD https://github.com/lacaulac/rcon-web-admin/archive/${RCON_WEB_ADMIN_VERSION}.tar.gz /tmp/rcon-web-admin.tgz
 
-ADD https://github.com/brainfoolong/rcon-web-admin/archive/${RCON_WEB_ADMIN_VERSION}.zip /tmp/rcon-web-admin.zip
-
-RUN cd /tmp ; unzip /tmp/rcon-web-admin.zip && \
-    mv rcon-web-admin-${RCON_WEB_ADMIN_VERSION} /opt/rcon-web-admin && \
-    rm /tmp/rcon-web-admin.zip
+RUN tar -C /opt -xf /tmp/rcon-web-admin.tgz && \
+    rm /tmp/rcon-web-admin.tgz && \
+    ln -s /opt/rcon-web-admin-${RCON_WEB_ADMIN_VERSION} /opt/rcon-web-admin
 
 WORKDIR /opt/rcon-web-admin
 
