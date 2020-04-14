@@ -1,9 +1,9 @@
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/itzg/rcon)](https://hub.docker.com/r/itzg/rcon)
 
-This image lets you run the [rcon-web-admin](https://github.com/brainfoolong/rcon-web-admin) administration tool as a
-Docker container. A great benefit of runnings rcon-web-admin in Docker, especially
-in a Docker Swarm or Composition is that the RCON port of your game server
+This image lets you run the [rcon-web-admin](https://github.com/lacaulac/rcon-web-admin) administration tool as a
+Docker container. A great benefit of running rcon-web-admin in Docker, especially
+in a Docker Composition is that the RCON port of your game server
 can remain securely isolated within the Docker network.
 
 ## Getting Started
