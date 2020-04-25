@@ -2,7 +2,7 @@ FROM node:10
 
 ARG RCON_WEB_ADMIN_VERSION=0.14
 
-ADD https://github.com/lacaulac/rcon-web-admin/archive/${RCON_WEB_ADMIN_VERSION}.tar.gz /tmp/rcon-web-admin.tgz
+ADD https://github.com/rcon-web-admin/rcon-web-admin/archive/${RCON_WEB_ADMIN_VERSION}.tar.gz /tmp/rcon-web-admin.tgz
 
 RUN tar -C /opt -xf /tmp/rcon-web-admin.tgz && \
     rm /tmp/rcon-web-admin.tgz && \

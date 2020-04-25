@@ -1,7 +1,7 @@
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/itzg/rcon)](https://hub.docker.com/r/itzg/rcon)
 
-This image lets you run the [rcon-web-admin](https://github.com/lacaulac/rcon-web-admin) administration tool as a
+This image lets you run the [rcon-web-admin](https://github.com/rcon-web-admin/rcon-web-admin) administration tool as a
 Docker container. A great benefit of running rcon-web-admin in Docker, especially
 in a Docker Composition is that the RCON port of your game server
 can remain securely isolated within the Docker network.
@@ -19,7 +19,7 @@ access the web UI at http://YOUR_DOCKER_HOST:4326
 
 ## Options
 
-### [Environment Variables](https://github.com/lacaulac/rcon-web-admin#environment-variables)
+### [Environment Variables](https://github.com/rcon-web-admin/rcon-web-admin#environment-variables)
 
 `RWA_ENV` is preset to "TRUE" in this image, so [all of the environment variables described in rcon-web-admin](https://github.com/lacaulac/rcon-web-admin#environment-variables) are available for use.
 
