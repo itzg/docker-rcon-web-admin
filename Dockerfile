@@ -1,6 +1,6 @@
 FROM node:10
 
-ARG RCON_WEB_ADMIN_VERSION=0.14
+ARG RCON_WEB_ADMIN_VERSION=0.14.1
 
 ADD https://github.com/rcon-web-admin/rcon-web-admin/archive/${RCON_WEB_ADMIN_VERSION}.tar.gz /tmp/rcon-web-admin.tgz
 
