@@ -36,8 +36,8 @@ access the web UI at http://YOUR_DOCKER_HOST:4326
 
 ### Running with itzg/minecraft-server
 
-To run this with the itzg/minecraft-server image, simply download/modify
-[this docker-compose.yml](https://raw.githubusercontent.com/itzg/dockerfiles/master/minecraft-server/docker-compose.yml)
+To run this with the `itzg/minecraft-server` image, simply download/modify
+[this docker-compose.yml](https://github.com/itzg/docker-rcon-web-admin/raw/master/docker-compose.yml)
 and then use `docker-compose` or `docker stack deploy -c` to bring up the composition.
 
 With that particular composition, configure a new server as shown here (with an RCON password of "testing")
