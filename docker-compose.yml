@@ -6,7 +6,7 @@ services:
     environment:
       RWA_USERNAME: admin
       RWA_PASSWORD: admin
-      RAW_ADMIN: "TRUE"
+      RWA_ADMIN: "TRUE"
       # is referring to the hostname of 'mc' compose service below
       RWA_RCON_HOST: mc
       # needs to match the password configured for the container, which is 'minecraft' by default
