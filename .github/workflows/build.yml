@@ -2,7 +2,7 @@ name: Build and publish multiarch
 on:
   push:
     branches:
-      - multiarch
+      - master
     tags:
       - "[0-9]+.[0-9]+.[0-9]+"
 
