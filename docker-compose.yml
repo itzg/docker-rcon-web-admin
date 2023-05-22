@@ -9,8 +9,8 @@ services:
       RWA_ADMIN: "TRUE"
       # is referring to the hostname of 'mc' compose service below
       RWA_RCON_HOST: mc
-      # needs to match the password configured for the container, which is 'minecraft' by default
-      RWA_RCON_PASSWORD: minecraft
+      # needs to match the RCON_PASSWORD configured for the container
+      RWA_RCON_PASSWORD: "demo"
     ports:
       - 4326:4326
       - 4327:4327
@@ -20,3 +20,6 @@ services:
       - 25565:25565
     environment:
       EULA: "TRUE"
+      # password needs to be explicitly set, 
+      # otherwise random one is generated at each startup
+      RCON_PASSWORD: "demo"
