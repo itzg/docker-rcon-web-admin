@@ -1,3 +1,8 @@
+# UNSUPPORTED
+
+This image is no longer actively supported since the upstream software no longer successfully establishes RCON connections. Issues and PRs are welcome to make suggestions for a suitable replacement.
+
+---
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/itzg/rcon)](https://hub.docker.com/r/itzg/rcon)
 
