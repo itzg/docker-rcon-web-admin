@@ -1,9 +1,3 @@
-# UNSUPPORTED
-
-This image is no longer actively supported since the upstream software no longer successfully establishes RCON connections. Issues and PRs are welcome to make suggestions for a suitable replacement.
-
----
-
 [![Docker Pulls](https://img.shields.io/docker/pulls/itzg/rcon)](https://hub.docker.com/r/itzg/rcon)
 
 This image lets you run the [rcon-web-admin](https://github.com/rcon-web-admin/rcon-web-admin) administration tool as a
@@ -13,10 +7,46 @@ can remain securely isolated within the Docker network.
 
 ## Getting Started
 
-To get up and running quickly, use
+To get up and running quickly, it is best use Docker Compose with a `docker-compose.yml` such as:
 
+```yaml
+version: '3.3'
+
+services:
+  web:
+    image: itzg/rcon
+    environment:
+      RWA_USERNAME: admin
+      RWA_PASSWORD: admin
+      RWA_ADMIN: "TRUE"
+      # is referring to the service name 'mc' declared below
+      RWA_RCON_HOST: mc
+      # needs to match the password configured for the container, see RCON_PASSWORD below
+      RWA_RCON_PASSWORD: "changethis!"
+    ports:
+      - "4326:4326"
+      - "4327:4327"
+  mc:
+    image: itzg/minecraft-server
+    ports:
+      - "25565:25565"
+      # DO NOT expose rcon port 25575 here
+    environment:
+      EULA: "TRUE"
+      RCON_PASSWORD: "changethis!"
 ```
-docker run -d --name rcon-web \
+
+To manually create containers with `docker run`s, which is **not recommended**:
+
+1. Create a user network
+```shell
+docker network create rcon
+```
+2. Create minecraft container with `--network rcon` and `--network-alias=mc`
+3. Create rcon-web container with `--network rcon`, `-e RWA_RCON_HOST=mc`
+
+```shell
+docker run -d --name rcon-web --network rcon \
   -p 4326:4326 -p 4327:4327 \
   -e RWA_PASSWORD=password \
   itzg/rcon
